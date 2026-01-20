@@ -72,6 +72,26 @@ if (menuToggle && mobileMenu) {
   });
 }
 
+// 3.5 Theme Toggle
+const themeToggle = document.getElementById("themeToggle");
+const htmlElement = document.documentElement;
+
+// Check for saved theme preference or default to dark
+const savedTheme = localStorage.getItem("theme") || "dark";
+if (savedTheme === "light") {
+  htmlElement.setAttribute("data-theme", "light");
+}
+
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    const currentTheme = htmlElement.getAttribute("data-theme");
+    const newTheme = currentTheme === "light" ? "dark" : "light";
+    
+    htmlElement.setAttribute("data-theme", newTheme === "light" ? "light" : "");
+    localStorage.setItem("theme", newTheme);
+  });
+}
+
 // 4. Magnetic Links
 document.querySelectorAll(".nav-link").forEach((link) => {
   link.addEventListener("mousemove", (e) => {
@@ -119,20 +139,20 @@ splitTexts.forEach((text) => {
 });
 
 // 6. Service Cards Animation
-const serviceCards = document.querySelectorAll(".service-card");
-if (serviceCards.length > 0) {
-  gsap.from(serviceCards, {
-    scrollTrigger: {
-      trigger: ".services-grid",
-      start: "top 70%",
-    },
-    y: 50,
-    opacity: 0,
-    duration: 1,
-    stagger: 0.1,
-    ease: "power3.out",
-  });
-}
+// const serviceCards = document.querySelectorAll(".service-card");
+// if (serviceCards.length > 0) {
+//   gsap.from(serviceCards, {
+//     scrollTrigger: {
+//       trigger: ".services-grid",
+//       start: "top 70%",
+//     },
+//     y: 50,
+//     opacity: 0,
+//     duration: 1,
+//     stagger: 0.1,
+//     ease: "power3.out",
+//   });
+// }
 
 // 7. Portfolio Items Animation
 const portfolioItems = document.querySelectorAll(".portfolio-item");
@@ -265,19 +285,18 @@ if (heroSection) {
 }
 
 // 13. Navigation Background on Scroll
+// 13. Navigation Background on Scroll (Disabled to preserve Glass CSS)
+/*
 const nav = document.querySelector("nav");
 if (nav) {
   ScrollTrigger.create({
     start: "top -50",
     onUpdate: (self) => {
-      if (self.scroll() > 50) {
-        nav.style.background = "rgba(0, 0, 0, 0.95)";
-      } else {
-        nav.style.background = "rgba(0, 0, 0, 0.8)";
-      }
+      // Logic managed by CSS backdrop-filter now
     },
   });
 }
+*/
 
 // 14. Image Reveal Animation
 const images = document.querySelectorAll(".about-image img, .portfolio-item img");
@@ -293,3 +312,5 @@ images.forEach((img) => {
     ease: "power3.out",
   });
 });
+
+
