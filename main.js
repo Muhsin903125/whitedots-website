@@ -6,6 +6,16 @@ import SplitType from "split-type";
 
 gsap.registerPlugin(ScrollTrigger);
 
+// 0. Page Loader
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+  if (loader) {
+    setTimeout(() => {
+      loader.classList.add("loader-hidden");
+    }, 800); // 0.8s buffer for smoothness
+  }
+});
+
 // 1. Smooth Scroll (Lenis)
 const lenis = new Lenis({
   duration: 1.2,

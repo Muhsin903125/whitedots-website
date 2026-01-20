@@ -826,7 +826,7 @@ section {
 
 .video-bento-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 250px;
   gap: 1.5rem;
   margin-top: 3rem;
@@ -1270,7 +1270,8 @@ footer {
   .hero-label { justify-content: center; }
   .hero-scroll { bottom: 1.5rem; }
   
-  .services-grid { gap: 1rem; }
+  /* Force 1 column for services on mobile */
+  .services-grid { grid-template-columns: 1fr; } 
   .portfolio-grid { grid-template-columns: 1fr; }
   
   .about-stats { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
@@ -1278,7 +1279,7 @@ footer {
   
   .form-row { grid-template-columns: 1fr; }
   
-  .footer { padding-bottom: 6rem; } /* Space for mobile nav behaviors if needed */
+  .footer { padding-bottom: 6rem; }
 }
 
 @media (max-width: 430px) {
