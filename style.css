@@ -690,7 +690,7 @@ section {
 /* ===== Services Grid Redesign (Compact) ===== */
 .services-section {
   position: relative;
-  overflow: visible; /* Fix visibility/cutoff issues */
+  overflow: hidden; /* Changed from visible to hidden to fix mobile width collapse */
   background: var(--color-bg-secondary);
   padding: 6rem 1.5rem;
 }
