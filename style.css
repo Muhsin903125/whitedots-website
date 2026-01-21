@@ -97,6 +97,37 @@ body {
   font-size: 1rem;
 }
 
+/* Logo Watermark Background */
+.logo-watermark {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.logo-watermark.left {
+  left: -150px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-15deg);
+}
+
+.logo-watermark.right {
+  right: -150px;
+  top: 50%;
+  transform: translateY(-50%) rotate(15deg);
+}
+
+.logo-watermark.center {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  opacity: 0.03;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-header);
   font-weight: 700;
@@ -1325,6 +1356,12 @@ html, body {
   .contact-item a,
   .contact-item span {
     word-break: break-all;
+  }
+  
+  /* Contact cards grid - force single column on mobile */
+  [style*="grid-template-columns: repeat(3"] {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
   }
 }
 
