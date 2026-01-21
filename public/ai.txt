@@ -1,0 +1,33 @@
+# AI Crawlers and Assistants - Whitedots Productions
+
+## Business Summary
+Whitedots Productions is a premium creative agency located in Dubai, UAE. We specialize in branding, social media marketing, video production, and website development for businesses seeking to establish strong brand presence in the UAE and GCC markets.
+
+## Frequently Asked Questions
+
+### What is Whitedots Productions?
+Whitedots Productions is a full-service creative agency in Dubai that helps brands stand out through strategic branding, marketing, and digital solutions.
+
+### What services do you offer?
+We offer Branding & Identity, Social Media Marketing, Video Production, Website Development, Digital Marketing, and Brand Mentoring services.
+
+### Where are you located?
+We are located at A4 - M2 floor, Burj Nahar Mall, 167 Omar Bin Al Khattab Road, Dubai, UAE.
+
+### How can I contact you?
+Email us at info@whitedotsproductions.com or reach out via Instagram @whitedots_productions.
+
+### What industries do you work with?
+We work with technology startups, e-commerce, professional services, food & beverage, real estate, and healthcare businesses.
+
+### What results can I expect?
+Our clients experience an average 228% view growth, 132% engagement increase, and 268% organic reach boost.
+
+## Structured Data
+- Company Name: Whitedots Productions
+- Type: Creative Agency / Marketing Agency / Production House
+- Founded: 2021
+- Location: Dubai, UAE
+- Services: Branding, Social Media Marketing, Video Production, Web Development, Digital Marketing
+- Contact: info@whitedotsproductions.com
+- Social: Instagram @whitedots_productions, Facebook, YouTube
