@@ -1252,12 +1252,29 @@ footer {
 .page-header p { max-width: 500px; }
 
 /* ===== Responsive ===== */
+
+/* Prevent horizontal overflow on all devices */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
 @media (max-width: 1024px) {
   .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
   .about-image { order: -1; }
   .footer-content { flex-direction: column; text-align: center; gap: 3rem; }
   .footer-brand { flex-direction: column; align-items: center; }
   .footer-right { flex-direction: column; gap: 1.5rem; }
+  
+  /* Hide large decorative circles that cause overflow */
+  .page-header::before,
+  .page-header::after,
+  .services-section::before,
+  .services-section::after,
+  .hero::before,
+  .hero::after {
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1265,14 +1282,15 @@ footer {
   .nav-links, .nav-cta { display: none; }
   .menu-toggle { display: flex; }
   
-  section { padding: 4rem 1.5rem; }
+  section { padding: 4rem 1rem; overflow-x: hidden; }
+  .container { max-width: 100%; overflow-x: hidden; }
   
   .hero-label { justify-content: center; }
   .hero-scroll { bottom: 1.5rem; }
   
-  /* Force 1 column for services on mobile */
-  .services-grid { grid-template-columns: 1fr; } 
-  .portfolio-grid { grid-template-columns: 1fr; }
+  /* Force 1 column for services on mobile - use !important to override inline styles */
+  .services-grid { grid-template-columns: 1fr !important; } 
+  .portfolio-grid { grid-template-columns: 1fr !important; }
   
   .about-stats { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
   .stat-item h3 { font-size: 2.5rem; }
@@ -1280,12 +1298,49 @@ footer {
   .form-row { grid-template-columns: 1fr; }
   
   .footer { padding-bottom: 6rem; }
+  
+  /* Stats grids that use inline styles - force single column */
+  [style*="grid-template-columns: repeat(4"] {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  
+  /* Prevent text overflow */
+  h1, h2, h3, h4, p, a, span, li {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  /* Page header adjustments */
+  .page-header {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .page-header h1 {
+    font-size: clamp(2rem, 10vw, 4rem);
+  }
+  
+  /* Contact info overflow fix */
+  .contact-item a,
+  .contact-item span {
+    word-break: break-all;
+  }
 }
 
 @media (max-width: 430px) {
-  h1 { font-size: 2.5rem; } /* Fallback */
+  h1 { font-size: 2rem; } /* Smaller fallback */
   .hero-cta { width: 100%; justify-content: center; }
   
   .service-card { padding: 1.5rem; }
   .service-number { font-size: 2rem; }
+  
+  /* Even smaller padding on very small screens */
+  section { padding: 3rem 0.75rem; }
+  
+  /* 404 page specific */
+  .page-header h1[style*="font-size"] {
+    font-size: clamp(3rem, 15vw, 6rem) !important;
+  }
 }
+
