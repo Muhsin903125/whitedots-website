@@ -220,13 +220,16 @@ statItems.forEach((stat) => {
       trigger: stat,
       start: "top 80%",
       onEnter: () => {
-        gsap.from(stat, {
-          textContent: 0,
+        // Use a proxy object to animate the number cleanly
+        const proxy = { val: 0 };
+        gsap.to(proxy, {
+          val: num,
           duration: 2,
           ease: "power2.out",
-          snap: { textContent: 1 },
-          onUpdate: function() {
-            stat.textContent = Math.round(this.targets()[0].textContent) + suffix;
+          onUpdate: () => {
+             // Round to integer if original was integer, or 1 decimal if float
+            const currentVal = Number.isInteger(num) ? Math.round(proxy.val) : proxy.val.toFixed(1);
+            stat.textContent = currentVal + suffix;
           }
         });
       },
@@ -322,5 +325,6 @@ images.forEach((img) => {
     ease: "power3.out",
   });
 });
+
 
 

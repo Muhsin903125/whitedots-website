@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZP1ZGESPKB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-ZP1ZGESPKB');
+    </script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -97,7 +106,6 @@
         <img src="/logo-white.png" alt="Whitedots Productions" class="logo-img" />
       </a>
       <div class="nav-links">
-        <a href="/" class="nav-link">Home</a>
         <a href="/pages/about.html" class="nav-link">About</a>
         <a href="/pages/services.html" class="nav-link">Services</a>
         <a href="/pages/portfolio.html" class="nav-link">Portfolio</a>
@@ -132,15 +140,32 @@
       <!-- Page Header -->
       <section class="page-header">
         <span class="mono section-label">[ Our Work ]</span>
-        <h1>Portfolio</h1>
-        <p>A showcase of our creative work across branding, marketing, and digital solutions.</p>
+        <h1>Our Work</h1>
+        <p>Here's some of what we've been up to. Take a look around.</p>
       </section>
 
       <!-- Portfolio Grid -->
       <section>
         <div class="container">
-          <div class="portfolio-grid" style="grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
-            <!-- Row 1 -->
+          
+          <div style="margin-bottom: 3rem;">
+            <div class="section-header">
+              <span class="mono section-label">[ Our Work ]</span>
+              <h2>Selected Projects</h2>
+            </div>
+          </div>
+
+          <div class="masonry-grid">
+            <!-- Videos -->
+            <div class="portfolio-item video-item" data-cursor="PLAY">
+              <video src="/assets/works/WorkVideo1.mp4" muted loop playsinline autoplay preload="metadata" poster="/assets/works/IMG_8849.JPG.jpeg"></video>
+              <div class="portfolio-overlay">
+                <h4>Commercial Video</h4>
+                <span>Video Production</span>
+              </div>
+            </div>
+            
+            <!-- Integration: Brand Identity -->
             <div class="portfolio-item" data-cursor="VIEW">
               <img src="/assets/portfolio/work-1.png" alt="Brand Identity" loading="lazy" />
               <div class="portfolio-overlay">
@@ -148,13 +173,42 @@
                 <span>Branding • Aurum & Co.</span>
               </div>
             </div>
+
+            <div class="portfolio-item video-item" data-cursor="PLAY">
+              <video src="/assets/works/WorkVideo2.mp4" muted loop playsinline autoplay preload="metadata" poster="/assets/works/IMG_8841.JPG.jpeg"></video>
+              <div class="portfolio-overlay">
+                <h4>Brand Film</h4>
+                <span>Video Production</span>
+              </div>
+            </div>
+
+            <!-- Aamira -->
             <div class="portfolio-item" data-cursor="VIEW">
+              <img src="/assets/works/IMG_8849.JPG.jpeg" alt="Aamira Necklace Set" loading="lazy" />
+              <div class="portfolio-overlay">
+                <h4>Bridal Collection</h4>
+                <span>Product Photography</span>
+              </div>
+            </div>
+
+             <!-- Integration: Social Media -->
+             <div class="portfolio-item" data-cursor="VIEW">
               <img src="/assets/portfolio/work-2.png" alt="Social Media" loading="lazy" />
               <div class="portfolio-overlay">
                 <h4>Social Media Mkt</h4>
                 <span>Marketing • Digital Growth</span>
               </div>
             </div>
+
+            <div class="portfolio-item" data-cursor="VIEW">
+              <img src="/assets/works/IMG_3256.PNG" alt="Noolspace New Year" loading="lazy" />
+              <div class="portfolio-overlay">
+                <h4>New Year Campaign</h4>
+                <span>Social Media</span>
+              </div>
+            </div>
+            
+            <!-- Integration: Video Still -->
             <div class="portfolio-item" data-cursor="VIEW">
               <img src="/assets/portfolio/work-3.png" alt="Video Production" loading="lazy" />
               <div class="portfolio-overlay">
@@ -163,7 +217,15 @@
               </div>
             </div>
 
-            <!-- Row 2 -->
+            <div class="portfolio-item" data-cursor="VIEW">
+              <img src="/assets/works/IMG_8843.JPG.jpeg" alt="Aamira Earrings" loading="lazy" />
+              <div class="portfolio-overlay">
+                <h4>Chandelier Earrings</h4>
+                <span>Product Photography</span>
+              </div>
+            </div>
+
+            <!-- Integration: Web Dev -->
             <div class="portfolio-item" data-cursor="VIEW">
               <img src="/assets/portfolio/work-4.png" alt="Web Development" loading="lazy" />
               <div class="portfolio-overlay">
@@ -171,14 +233,34 @@
                 <span>Development • Tech Startups</span>
               </div>
             </div>
+
             <div class="portfolio-item" data-cursor="VIEW">
-              <img src="/assets/portfolio/work-8.png" alt="Product Photography" loading="lazy" />
+              <img src="/assets/works/IMG_8841.JPG.jpeg" alt="Aamira Jhumkas" loading="lazy" />
               <div class="portfolio-overlay">
-                <h4>Product Photography</h4>
-                <span>Content • Luxury Goods</span>
+                <h4>Traditional Jhumkas</h4>
+                <span>Product Photography</span>
               </div>
             </div>
+
+            <!-- Integration: Agency Life -->
             <div class="portfolio-item" data-cursor="VIEW">
+              <img src="/assets/portfolio/work-5.png" alt="Agency Life" loading="lazy" />
+              <div class="portfolio-overlay">
+                <h4>Creative Process</h4>
+                <span>Culture • Behind the Scenes</span>
+              </div>
+            </div>
+
+            <div class="portfolio-item" data-cursor="VIEW">
+              <img src="/assets/works/IMG_2290.PNG" alt="Noolspace Quote" loading="lazy" />
+              <div class="portfolio-overlay">
+                <h4>Motivational Content</h4>
+                <span>Social Media</span>
+              </div>
+            </div>
+
+             <!-- Integration: Digital Marketing -->
+             <div class="portfolio-item" data-cursor="VIEW">
               <img src="/assets/portfolio/work-6.png" alt="Digital Marketing" loading="lazy" />
               <div class="portfolio-overlay">
                 <h4>Analytics & Growth</h4>
@@ -186,14 +268,15 @@
               </div>
             </div>
 
-            <!-- Row 3 -->
             <div class="portfolio-item" data-cursor="VIEW">
-              <img src="/assets/portfolio/work-9.png" alt="Event Production" loading="lazy" />
+              <img src="/assets/works/IMG_8851.JPG.jpeg" alt="Aamira Jewelry Box" loading="lazy" />
               <div class="portfolio-overlay">
-                <h4>Event Coverage</h4>
-                <span>Production • Corporate</span>
+                <h4>Heritage Collection</h4>
+                <span>Product Photography</span>
               </div>
             </div>
+
+            <!-- Integration: Brand Strategy -->
             <div class="portfolio-item" data-cursor="VIEW">
               <img src="/assets/portfolio/work-7.png" alt="Brand Strategy" loading="lazy" />
               <div class="portfolio-overlay">
@@ -201,11 +284,81 @@
                 <span>Strategy • Mentoring</span>
               </div>
             </div>
+
             <div class="portfolio-item" data-cursor="VIEW">
-              <img src="/assets/portfolio/work-5.png" alt="Agency Life" loading="lazy" />
+              <img src="/assets/works/IMG_8852.JPG.jpeg" alt="Aamira Gold Earrings" loading="lazy" />
               <div class="portfolio-overlay">
-                <h4>Creative Process</h4>
-                <span>Culture • Behind the Scenes</span>
+                <h4>Gold Statement Pieces</h4>
+                <span>Product Photography</span>
+              </div>
+            </div>
+
+             <!-- Integration: Product Photo -->
+             <div class="portfolio-item" data-cursor="VIEW">
+              <img src="/assets/portfolio/work-8.png" alt="Product Photography" loading="lazy" />
+              <div class="portfolio-overlay">
+                <h4>Product Photography</h4>
+                <span>Content • Luxury Goods</span>
+              </div>
+            </div>
+
+             <div class="portfolio-item" data-cursor="VIEW">
+              <img src="/assets/works/IMG_2796.JPG.jpeg" alt="Noolspace Mental Health" loading="lazy" />
+              <div class="portfolio-overlay">
+                <h4>Wellness Check-in</h4>
+                <span>Social Media</span>
+              </div>
+            </div>
+
+            <!-- Integration: Event Production -->
+            <div class="portfolio-item" data-cursor="VIEW">
+              <img src="/assets/portfolio/work-9.png" alt="Event Production" loading="lazy" />
+              <div class="portfolio-overlay">
+                <h4>Event Coverage</h4>
+                <span>Production • Corporate</span>
+              </div>
+            </div>
+
+            <div class="portfolio-item" data-cursor="VIEW">
+              <img src="/assets/works/IMG_8845.JPG.jpeg" alt="Aamira Candle Setup" loading="lazy" />
+              <div class="portfolio-overlay">
+                <h4>Lifestyle Shots</h4>
+                <span>Product Photography</span>
+              </div>
+            </div>
+            <div class="portfolio-item" data-cursor="VIEW">
+              <img src="/assets/works/IMG_8864.JPG.jpeg" alt="Aamira Gemstone Rings" loading="lazy" />
+              <div class="portfolio-overlay">
+                <h4>Gemstone Collection</h4>
+                <span>Product Photography</span>
+              </div>
+            </div>
+            <div class="portfolio-item" data-cursor="VIEW">
+              <img src="/assets/works/IMG_8869.JPG.jpeg" alt="Aamira Necklace" loading="lazy" />
+              <div class="portfolio-overlay">
+                <h4>Chain Necklaces</h4>
+                <span>Product Photography</span>
+              </div>
+            </div>
+            <div class="portfolio-item" data-cursor="VIEW">
+              <img src="/assets/works/IMG_8871.JPG.jpeg" alt="Aamira Earrings Set" loading="lazy" />
+              <div class="portfolio-overlay">
+                <h4>Earring Collection</h4>
+                <span>Product Photography</span>
+              </div>
+            </div>
+            <div class="portfolio-item" data-cursor="VIEW">
+              <img src="/assets/works/IMG_8846.JPG.jpeg" alt="Aamira Set" loading="lazy" />
+              <div class="portfolio-overlay">
+                <h4>Jewelry Set</h4>
+                <span>Product Photography</span>
+              </div>
+            </div>
+            <div class="portfolio-item" data-cursor="VIEW">
+              <img src="/assets/works/IMG_8856.JPG.jpeg" alt="Aamira Jewels" loading="lazy" />
+              <div class="portfolio-overlay">
+                <h4>Jewelry Detail</h4>
+                <span>Product Photography</span>
               </div>
             </div>
           </div>
@@ -216,12 +369,12 @@
       <section style="background: var(--color-bg-secondary); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
         <div class="container">
           <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
-            <span class="mono section-label">[ Client Results ]</span>
-            <h2>The Numbers Speak</h2>
+            <span class="mono section-label">[ Results ]</span>
+            <h2>What's Happened So Far</h2>
           </div>
           <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center;">
             <div class="stat-item">
-              <h3 style="font-size: 3rem;">148K+</h3>
+              <h3 style="font-size: 3rem;">540K+</h3>
               <span>Total Views Generated</span>
             </div>
             <div class="stat-item">
@@ -229,7 +382,7 @@
               <span>Average View Growth</span>
             </div>
             <div class="stat-item">
-              <h3 style="font-size: 3rem;">5.9M</h3>
+              <h3 style="font-size: 3rem;">12.5M</h3>
               <span>Content Reach</span>
             </div>
             <div class="stat-item">
@@ -244,13 +397,16 @@
       <section>
         <div class="container">
           <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
-            <span class="mono section-label">[ Clients We've Worked With ]</span>
-            <h2>Trusted by Brands</h2>
+            <span class="mono section-label">[ Some Folks We've Helped ]</span>
+            <h2>Brands We've Worked With</h2>
           </div>
           <div style="display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; opacity: 0.6;">
-            <div style="font-family: var(--font-header); font-size: 1.5rem; font-weight: 700;">CarMC</div>
+             <div style="font-family: var(--font-header); font-size: 1.5rem; font-weight: 700;">CarMC</div>
             <div style="font-family: var(--font-header); font-size: 1.5rem; font-weight: 700;">Colion International</div>
             <div style="font-family: var(--font-header); font-size: 1.5rem; font-weight: 700;">Aurum & Co.</div>
+            <div style="font-family: var(--font-header); font-size: 1.5rem; font-weight: 700;">Noolspace</div>
+            <div style="font-family: var(--font-header); font-size: 1.5rem; font-weight: 700;">Aamira</div>
+            <div style="font-family: var(--font-header); font-size: 1.5rem; font-weight: 700;">Club 7 Gym</div>
             <div style="font-family: var(--font-header); font-size: 1.5rem; font-weight: 700;">& More</div>
           </div>
         </div>
@@ -259,8 +415,8 @@
       <!-- CTA Section -->
       <section class="cta-section">
         <div class="container">
-          <h2>Want to Be Our Next Success Story?</h2>
-          <p>Let's discuss how we can help transform your brand.</p>
+          <h2>Like What You See?</h2>
+          <p>Let's talk about your project. We'd love to hear what you're working on.</p>
           <a href="/pages/contact.html" class="hero-cta">
             Start Your Project
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -276,7 +432,7 @@
       <div class="footer-content">
         <div class="footer-brand">
           <img src="/logo-white.png" alt="Whitedots Productions" class="footer-logo" />
-          <p>Crafting brands that command attention.</p>
+          <p>Making brands people remember.</p>
         </div>
         <!-- <nav class="footer-nav">
           <a href="/">Home</a>

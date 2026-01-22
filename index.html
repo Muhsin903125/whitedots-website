@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZP1ZGESPKB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-ZP1ZGESPKB');
+    </script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -260,7 +269,6 @@
         <img src="/logo-white.png" alt="Whitedots Productions" class="logo-img" />
       </a>
       <div class="nav-links">
-        <a href="/" class="nav-link">Home</a>
         <a href="/pages/about.html" class="nav-link">About</a>
         <a href="/pages/services.html" class="nav-link">Services</a>
         <a href="/pages/portfolio.html" class="nav-link">Portfolio</a>
@@ -301,9 +309,9 @@
           <div class="hero-overlay"></div>
         </div>
         <div class="hero-content">
-          <span class="mono hero-label">Dubai's Creative Powerhouse</span>
-          <h1 class="split-text">Creative.<br>Digital.<br>Results.</h1>
-          <p class="hero-subtitle">We combine strategy, creativity, and execution to help brands stand out, connect, and scale with purpose.</p>
+          <span class="mono hero-label">A Creative Studio in Dubai</span>
+          <h1 class="split-text">Creative<br>Digital<br>Results.</h1>
+          <p class="hero-subtitle">Good branding shouldn't be complicated. We help businesses look great and actually get noticed without the fluff.</p>
           <a href="/pages/contact.html" class="hero-cta">
             Let's Talk
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -322,38 +330,38 @@
         <div class="container">
           <div class="section-header">
             <span class="mono section-label">[ What We Do ]</span>
-            <h2>Services Built for Growth</h2>
+            <h2>Here's What We're Good At</h2>
           </div>
           <div class="services-grid">
             <div class="service-card">
               <span class="service-number">01</span>
               <h3>Branding & Identity</h3>
-              <p>Strategic brand development that creates lasting impressions and builds recognition.</p>
+              <p>We'll help you figure out what your brand should look and feel like logos, colors, the whole package.</p>
             </div>
             <div class="service-card">
               <span class="service-number">02</span>
               <h3>Social Media Marketing</h3>
-              <p>Content that converts. We craft scroll-stopping campaigns that drive real engagement.</p>
+              <p>Posts that people actually want to look at. We handle your socials so you don't have to stress about it.</p>
             </div>
             <div class="service-card">
               <span class="service-number">03</span>
               <h3>Video Production</h3>
-              <p>Cinematic storytelling that elevates your brand through high-end visual content.</p>
+              <p>Videos that tell your story the right way whether it's a quick reel or a full commercial.</p>
             </div>
             <div class="service-card">
               <span class="service-number">04</span>
               <h3>Website Development</h3>
-              <p>High-performance digital experiences built with cutting-edge technology.</p>
+              <p>Clean, fast websites that work on every device. No weird bugs, no slow loading.</p>
             </div>
             <div class="service-card">
               <span class="service-number">05</span>
               <h3>Digital Marketing</h3>
-              <p>Data-driven campaigns that maximize reach and deliver measurable results.</p>
+              <p>Ads and SEO that actually bring in customers not just vanity metrics.</p>
             </div>
             <div class="service-card">
               <span class="service-number">06</span>
               <h3>Brand Mentoring</h3>
-              <p>Strategic guidance to help your brand grow, adapt, and thrive in competitive markets.</p>
+              <p>Need advice on growing your brand? We've been there. Let's figure it out together.</p>
             </div>
           </div>
         </div>
@@ -364,39 +372,128 @@
         <div class="container">
           <div class="section-header">
             <span class="mono section-label">[ Our Work ]</span>
-            <h2>Featured Projects</h2>
+            <h2>Selected Works</h2>
           </div>
-          <div class="portfolio-grid">
-            <div class="portfolio-item" data-cursor="VIEW">
-              <img src="/assets/portfolio/work-1.png" alt="Brand Identity Design" loading="lazy" />
+          <div class="masonry-grid">
+            <!-- Video 1 -->
+            <div class="portfolio-item video-item" data-cursor="PLAY">
+              <video src="/assets/works/WorkVideo1.mp4" muted loop playsinline autoplay preload="metadata"></video>
               <div class="portfolio-overlay">
-                <h4>Brand Identity System</h4>
+                <h4>Video Production</h4>
+                <span>Commercial</span>
+              </div>
+            </div>
+
+            <!-- Added: Brand Identity -->
+            <div class="portfolio-item" data-cursor="VIEW">
+              <img src="/assets/portfolio/work-1.png" alt="Brand Identity" loading="lazy" />
+              <div class="portfolio-overlay">
+                <h4>Brand Identity</h4>
                 <span>Branding</span>
               </div>
             </div>
+
+            <!-- Aamira Necklace -->
             <div class="portfolio-item" data-cursor="VIEW">
-              <img src="/assets/portfolio/work-2.png" alt="Social Media Marketing" loading="lazy" />
+              <img src="/assets/works/IMG_8849.JPG.jpeg" alt="Aamira Jewelry Collection" loading="lazy" />
               <div class="portfolio-overlay">
-                <h4>Social Media Campaign</h4>
+                <h4>Aamira Jewelry</h4>
+                <span>Product Photography</span>
+              </div>
+            </div>
+
+             <!-- Added: Social Media -->
+             <div class="portfolio-item" data-cursor="VIEW">
+              <img src="/assets/portfolio/work-2.png" alt="Social Media" loading="lazy" />
+              <div class="portfolio-overlay">
+                <h4>Social Media Mkt</h4>
                 <span>Marketing</span>
               </div>
             </div>
+
+            <!-- Noolspace New Year -->
             <div class="portfolio-item" data-cursor="VIEW">
-              <img src="/assets/portfolio/work-4.png" alt="Website Design" loading="lazy" />
+              <img src="/assets/works/IMG_3256.PNG" alt="Noolspace Campaign" loading="lazy" />
               <div class="portfolio-overlay">
-                <h4>E-Commerce Website</h4>
-                <span>Web Development</span>
+                <h4>Noolspace</h4>
+                <span>Social Media</span>
               </div>
             </div>
+
+            <!-- Aamira Earrings -->
             <div class="portfolio-item" data-cursor="VIEW">
-              <img src="/assets/portfolio/work-3.png" alt="Video Production Dubai" loading="lazy" />
+              <img src="/assets/works/IMG_8843.JPG.jpeg" alt="Aamira Earrings" loading="lazy" />
               <div class="portfolio-overlay">
-                <h4>Commercial Film</h4>
+                <h4>Aamira Collection</h4>
+                <span>Product Photography</span>
+              </div>
+            </div>
+
+             <!-- Added: Web Dev -->
+             <div class="portfolio-item" data-cursor="VIEW">
+              <img src="/assets/portfolio/work-4.png" alt="Web Development" loading="lazy" />
+              <div class="portfolio-overlay">
+                <h4>Web Experience</h4>
+                <span>Development</span>
+              </div>
+            </div>
+
+            <!-- Noolspace Quote -->
+            <div class="portfolio-item" data-cursor="VIEW">
+              <img src="/assets/works/IMG_2290.PNG" alt="Noolspace Quote" loading="lazy" />
+              <div class="portfolio-overlay">
+                <h4>Motivational Content</h4>
+                <span>Social Media</span>
+              </div>
+            </div>
+
+             <!-- Added: Agency Life -->
+             <div class="portfolio-item" data-cursor="VIEW">
+              <img src="/assets/portfolio/work-5.png" alt="Agency Life" loading="lazy" />
+              <div class="portfolio-overlay">
+                <h4>Creative Process</h4>
+                <span>Culture</span>
+              </div>
+            </div>
+
+            <!-- Aamira Jhumkas -->
+            <div class="portfolio-item" data-cursor="VIEW">
+              <img src="/assets/works/IMG_8841.JPG.jpeg" alt="Aamira Jhumkas" loading="lazy" />
+              <div class="portfolio-overlay">
+                <h4>Traditional Jhumkas</h4>
+                <span>Product Photography</span>
+              </div>
+            </div>
+
+             <!-- Video 2 -->
+             <div class="portfolio-item video-item" data-cursor="PLAY">
+              <video src="/assets/works/WorkVideo2.mp4" muted loop playsinline autoplay preload="metadata"></video>
+              <div class="portfolio-overlay">
+                <h4>Brand Film</h4>
                 <span>Video Production</span>
               </div>
             </div>
+
+            <!-- Aamira Box -->
+            <div class="portfolio-item" data-cursor="VIEW">
+              <img src="/assets/works/IMG_8851.JPG.jpeg" alt="Aamira Heritage" loading="lazy" />
+              <div class="portfolio-overlay">
+                <h4>Heritage Collection</h4>
+                <span>Product Photography</span>
+              </div>
+            </div>
+             
+             <!-- Noolspace Connection -->
+            <div class="portfolio-item" data-cursor="VIEW">
+              <img src="/assets/works/IMG_2796.JPG.jpeg" alt="Noolspace Art" loading="lazy" />
+              <div class="portfolio-overlay">
+                <h4>Wellness Content</h4>
+                <span>Social Media</span>
+              </div>
+            </div>
+
           </div>
-          <div style="text-align: center; margin-top: 3rem;">
+          <div style="text-align: center; margin-top: 4rem;">
             <a href="/pages/portfolio.html" class="hero-cta">
               View All Work
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -420,21 +517,21 @@
           <div class="about-grid">
             <div class="about-content">
               <span class="mono section-label">[ Why Whitedots ]</span>
-              <h2>We Build Brands That Matter</h2>
-              <p>We take the time to understand the people behind the brand, their vision, and what the business truly needs. Then our creative team crafts branding and marketing solutions that fit perfectly and create real impact.</p>
-              <p>Backed by experience from our own startups in India and a successful IT business in Dubai, we bring practical insight, creativity, and strategy to help brands grow, connect with their audience, and stand out.</p>
-              <div class="about-stats">
+              <h2>We Actually Get What You Need</h2>
+              <p>Before we design anything, we sit down and listen. Who are you? What's your vision? What's the actual problem you're trying to solve? That's where we start.</p>
+              <p>We've built our own businesses startups in India, an IT company here in Dubai. So we know what it's like to be in your shoes. We're not just vendors, we get it.</p>
+              <div class="about-stats" style="flex-wrap: wrap; gap: 2rem;">
                 <div class="stat-item">
-                  <h3>50+</h3>
-                  <span>Projects Delivered</span>
+                  <h3 style="font-size: 2.5rem;">540K+</h3>
+                  <span>Total Views</span>
                 </div>
                 <div class="stat-item">
-                  <h3>35+</h3>
+                  <h3 style="font-size: 2.5rem;">12.5M</h3>
+                  <span>Content Reach</span>
+                </div>
+                <div class="stat-item">
+                  <h3 style="font-size: 2.5rem;">35+</h3>
                   <span>Happy Clients</span>
-                </div>
-                <div class="stat-item">
-                  <h3>5+</h3>
-                  <span>Years Experience</span>
                 </div>
               </div>
             </div>
@@ -448,8 +545,8 @@
       <!-- CTA Section -->
       <section class="cta-section">
         <div class="container">
-          <h2>Ready to Elevate Your Brand?</h2>
-          <p>Let's collaborate on your next big project. We're ready to bring your vision to life.</p>
+          <h2>Got an Idea? Let's Make It Happen.</h2>
+          <p>Whether you're starting fresh or need a rebrand we're here to help. No pressure, just a chat.</p>
           <a href="/pages/contact.html" class="hero-cta">
             Start a Project
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -465,7 +562,7 @@
       <div class="footer-content">
         <div class="footer-brand">
           <img src="/logo-white.png" alt="Whitedots Productions" class="footer-logo" />
-          <p>Crafting brands that command attention.</p>
+          <p>Making brands people remember.</p>
         </div>
         <!-- <nav class="footer-nav">
           <a href="/">Home</a>
