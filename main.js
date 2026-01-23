@@ -262,7 +262,7 @@ if (contactForm) {
     }
     
     // Construct WhatsApp message
-    const waNumber = "971502716026";
+    const waNumber = "971507668536";
     const text = `*New Project Inquiry*\n\n*Name:* ${data.name}\n*Email:* ${data.email}\n*Service:* ${data.service}\n*Message:* ${data.message}`;
     const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`;
     
