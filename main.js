@@ -261,8 +261,15 @@ if (contactForm) {
       return;
     }
     
-    // Success message (in production, this would send to a server)
-    alert("Thank you for your message! We'll get back to you shortly.");
+    // Construct WhatsApp message
+    const waNumber = "971502716026";
+    const text = `*New Project Inquiry*\n\n*Name:* ${data.name}\n*Email:* ${data.email}\n*Service:* ${data.service}\n*Message:* ${data.message}`;
+    const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`;
+    
+    // Redirect to WhatsApp
+    window.open(waUrl, '_blank');
+    
+    // Optional: Reset form
     contactForm.reset();
   });
 }
