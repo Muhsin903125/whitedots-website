@@ -1,4 +1,4 @@
-import "./style.css";
+﻿import "./style.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
@@ -10,9 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 window.addEventListener("load", () => {
   const loader = document.getElementById("loader");
   if (loader) {
-    setTimeout(() => {
-      loader.classList.add("loader-hidden");
-    }, 800); // 0.8s buffer for smoothness
+    loader.classList.add("loader-hidden");
   }
 });
 
@@ -335,3 +333,34 @@ images.forEach((img) => {
 
 
 
+
+
+// 15. Video Lazy Loading
+const lazyVideos = document.querySelectorAll("video.lazy, .video-item video");
+if ("IntersectionObserver" in window) {
+  const videoObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const targetVideo = entry.target;
+        // If the video has source elements
+        const sources = targetVideo.querySelectorAll("source");
+        if (sources.length > 0) {
+          sources.forEach(source => {
+            if (source.dataset.src) {
+              source.src = source.dataset.src;
+            }
+          });
+        } else if (targetVideo.dataset.src) {
+          targetVideo.src = targetVideo.dataset.src;
+        }
+        
+        targetVideo.load();
+        videoObserver.unobserve(targetVideo);
+      }
+    });
+  });
+
+  lazyVideos.forEach((video) => {
+    videoObserver.observe(video);
+  });
+}
