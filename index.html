@@ -39,7 +39,7 @@
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-`    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Montserrat:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Montserrat:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'" />
 
     <!-- Preload Critical Assets -->
     <link rel="preload" href="/assets/portfolio/herosection.mp4" as="video" type="video/mp4" />
@@ -324,7 +324,7 @@
       <!-- Hero Section -->
       <section class="hero">
         <div class="hero-bg">
-          <video class="hero-video" autoplay muted loop playsinline>
+          <video class="hero-video" autoplay muted loop playsinline preload="metadata">
             <source src="/assets/portfolio/herosection.mp4" type="video/mp4" />
           </video>
           <div class="hero-overlay"></div>
@@ -398,7 +398,7 @@
           <div class="masonry-grid">
             <!-- Brand Story Video -->
             <div class="portfolio-item video-item" data-cursor="PLAY">
-              <video data-src="/assets/works/IMG_6399_compressed.mp4" muted loop playsinline autoplay preload="none" class="lazy"></video>
+              <video src="/assets/works/IMG_6399_compressed.mp4" muted loop playsinline autoplay preload="metadata"></video>
               <div class="portfolio-overlay">
                 <h4>Brand Story</h4>
                 <span>Video Production</span>
@@ -488,7 +488,7 @@
 
             <!-- Brand Film -->
             <div class="portfolio-item video-item" data-cursor="PLAY">
-              <video data-src="/assets/works/WorkVideo2_compressed.mp4" muted loop playsinline autoplay preload="none" class="lazy"></video>
+              <video src="/assets/works/WorkVideo2_compressed.mp4" muted loop playsinline autoplay preload="metadata"></video>
               <div class="portfolio-overlay">
                 <h4>Brand Film</h4>
                 <span>Video Production</span>
