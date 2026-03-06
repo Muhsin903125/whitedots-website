@@ -67,7 +67,9 @@ if (menuToggle && mobileMenu) {
   menuToggle.addEventListener("click", () => {
     menuToggle.classList.toggle("active");
     mobileMenu.classList.toggle("active");
-    document.body.style.overflow = mobileMenu.classList.contains("active") ? "hidden" : "";
+    const isOpen = mobileMenu.classList.contains("active");
+    document.body.style.overflow = isOpen ? "hidden" : "";
+    menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
   });
 
   // Close menu when clicking a link
@@ -76,6 +78,7 @@ if (menuToggle && mobileMenu) {
       menuToggle.classList.remove("active");
       mobileMenu.classList.remove("active");
       document.body.style.overflow = "";
+      menuToggle.setAttribute("aria-expanded", "false");
     });
   });
 }

@@ -1369,6 +1369,9 @@ html, body {
   .footer-brand { flex-direction: column; align-items: center; }
   .footer-right { flex-direction: column; gap: 1.5rem; }
   
+  /* Services grid 2-column on tablet */
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  
   /* Hide large decorative circles that cause overflow */
   .page-header::before,
   .page-header::after,
@@ -1376,6 +1379,11 @@ html, body {
   .services-section::after,
   .hero::before,
   .hero::after {
+    display: none;
+  }
+  
+  /* Hide logo watermark on tablet and below */
+  .logo-watermark {
     display: none;
   }
 }
@@ -1388,24 +1396,33 @@ html, body {
   section { padding: 4rem 1rem; overflow-x: hidden; }
   .container { max-width: 100%; overflow-x: hidden; }
   
-  .hero-label { justify-content: center; }
+  .hero { min-height: 100svh; padding: 0 1rem; }
+  .hero-label { justify-content: center; font-size: 0.75rem; }
+  .hero-label::before,
+  .hero-label::after { width: 25px; }
   .hero-scroll { bottom: 1.5rem; }
+  .hero-subtitle { font-size: 1rem; padding: 0 0.5rem; }
+  .hero h1 { font-size: clamp(2.5rem, 10vw, 5rem); }
   
   /* Force 1 column for services on mobile - use !important to override inline styles */
   .services-grid { grid-template-columns: 1fr !important; } 
   .portfolio-grid { grid-template-columns: 1fr !important; }
   
-  .about-stats { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
-  .stat-item h3 { font-size: 2.5rem; }
+  .about-grid { gap: 2rem; }
+  .about-stats { grid-template-columns: repeat(3, 1fr) !important; gap: 1rem !important; text-align: center; }
+  .about-stats .stat-item h3 { font-size: 1.75rem !important; }
+  .about-content h2 { font-size: clamp(1.5rem, 5vw, 2.5rem); }
+  
+  .about-image img { height: 250px; }
   
   .form-row { grid-template-columns: 1fr; }
   
   .footer { padding-bottom: 6rem; }
   
-  /* Stats grids that use inline styles - force single column */
+  /* Stats grids that use inline styles - force responsive */
   [style*="grid-template-columns: repeat(4"] {
-    grid-template-columns: 1fr !important;
-    gap: 2rem !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
   }
   
   /* Prevent text overflow */
@@ -1418,6 +1435,7 @@ html, body {
   .page-header {
     padding-left: 1rem;
     padding-right: 1rem;
+    min-height: 40vh;
   }
   
   .page-header h1 {
@@ -1430,26 +1448,95 @@ html, body {
     word-break: break-all;
   }
   
-  /* Contact cards grid - force single column on mobile */
+  /* Contact cards grid - force 1 column on mobile */
   [style*="grid-template-columns: repeat(3"] {
     grid-template-columns: 1fr !important;
     gap: 1rem !important;
   }
+  
+  /* CTA section */
+  .cta-section { padding: 3rem 1rem; }
+  .cta-section h2 { font-size: clamp(1.5rem, 5vw, 2.5rem); }
+  
+  /* Hero CTA - full width on mobile */
+  .hero-cta {
+    padding: 1rem 2rem;
+    font-size: 0.875rem;
+  }
+  
+  /* Mobile menu improvements */
+  .mobile-menu a {
+    font-size: 2rem;
+  }
+  
+  /* Footer brand text */
+  .footer-brand p { text-align: center; }
+  
+  /* Custom cursor: hide on touch devices */
+  .cursor { display: none !important; }
 }
 
-@media (max-width: 430px) {
-  h1 { font-size: 2rem; } /* Smaller fallback */
-  .hero-cta { width: 100%; justify-content: center; }
+@media (max-width: 480px) {
+  .about-stats { grid-template-columns: repeat(3, 1fr) !important; gap: 0.75rem !important; }
+  .about-stats .stat-item h3 { font-size: 1.4rem !important; }
+  .about-stats .stat-item span { font-size: 0.5rem; }
   
-  .service-card { padding: 1.5rem; }
-  .service-number { font-size: 2rem; }
-  
-  /* Even smaller padding on very small screens */
   section { padding: 3rem 0.75rem; }
+  
+  .hero h1 { font-size: clamp(2rem, 12vw, 3.5rem); }
+  .hero-subtitle { font-size: 0.9rem; }
+  
+  .service-card { padding: 1.5rem; min-height: auto; }
+  .service-number { font-size: 2rem; }
+  .service-card h3 { font-size: 1.1rem; }
+  .service-card p { font-size: 0.85rem; }
+  
+  /* Stats grids - single column on very small screens */
+  [style*="grid-template-columns: repeat(4"] {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
   
   /* 404 page specific */
   .page-header h1[style*="font-size"] {
     font-size: clamp(3rem, 15vw, 6rem) !important;
   }
+  
+  .mobile-menu a { font-size: 1.75rem; }
+  
+  /* Footer */
+  .footer-content { gap: 2rem; }
+  .social-links { gap: 1.25rem; }
+  .social-links svg { width: 20px; height: 20px; }
+}
+
+@media (max-width: 360px) {
+  h1 { font-size: 1.75rem; }
+  .hero-cta { width: 100%; justify-content: center; padding: 0.875rem 1.5rem; }
+  
+  .about-stats { grid-template-columns: 1fr !important; }
+  .about-stats .stat-item h3 { font-size: 2rem !important; }
+  
+  nav { padding: 0.75rem; }
+  .logo-img { height: 32px; }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .cursor { display: none !important; }
+  
+  /* Ensure tap targets are at least 44x44px */
+  .nav-link { padding: 0.75rem 0.5rem; }
+  .menu-toggle { padding: 0.75rem; min-width: 44px; min-height: 44px; }
+  .social-links a { padding: 0.5rem; min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+  
+  /* Show portfolio overlay by default on touch */
+  .portfolio-overlay { opacity: 1; transform: translateY(0); }
+  .video-overlay { opacity: 1; transform: translateY(0); }
+  
+  /* Disable hover transforms that feel janky on touch */
+  .service-card:hover { transform: none; }
+  .hero-cta:hover { transform: none; }
+  .nav-cta:hover { transform: none; }
 }
 
