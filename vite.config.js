@@ -13,5 +13,17 @@ export default defineConfig({
         notfound: resolve(__dirname, '404.html'),
       },
     },
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+      },
+    },
+    chunkSizeWarningLimit: 1024,
+  },
+  server: {
+    headers: {
+      'Cache-Control': 'public, max-age=3600',
+    },
   },
 });

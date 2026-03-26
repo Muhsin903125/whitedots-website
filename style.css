@@ -1047,6 +1047,7 @@ section {
   border-radius: 4px;
   filter: grayscale(100%); /* B&W by default */
   transition: all 0.4s ease;
+  aspect-ratio: auto;
 }
 
 .masonry-grid .portfolio-item:hover img,
