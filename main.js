@@ -83,69 +83,60 @@ if (menuToggle && mobileMenu) {
   });
 }
 
-// 3.5 Theme Toggle
-const themeToggle = document.getElementById("themeToggle");
-const htmlElement = document.documentElement;
 
-// Check for saved theme preference or default to dark
-const savedTheme = localStorage.getItem("theme") || "dark";
-if (savedTheme === "light") {
-  htmlElement.setAttribute("data-theme", "light");
+// 4. Magnetic Links - Defer initialization for better INP
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initMagneticLinks);
+} else {
+  requestIdleCallback(initMagneticLinks);
 }
 
-if (themeToggle) {
-  themeToggle.addEventListener("click", () => {
-    const currentTheme = htmlElement.getAttribute("data-theme");
-    const newTheme = currentTheme === "light" ? "dark" : "light";
-    
-    htmlElement.setAttribute("data-theme", newTheme === "light" ? "light" : "");
-    localStorage.setItem("theme", newTheme);
-  });
-}
+function initMagneticLinks() {
+  document.querySelectorAll(".nav-link").forEach((link) => {
+    link.addEventListener("mousemove", (e) => {
+      const rect = link.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
 
-// 4. Magnetic Links
-document.querySelectorAll(".nav-link").forEach((link) => {
-  link.addEventListener("mousemove", (e) => {
-    const rect = link.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width / 2;
-    const y = e.clientY - rect.top - rect.height / 2;
-
-    gsap.to(link, {
-      x: x * 0.3,
-      y: y * 0.3,
-      duration: 0.3,
-      ease: "power2.out",
+      gsap.to(link, {
+        x: x * 0.3,
+        y: y * 0.3,
+        duration: 0.3,
+        ease: "power2.out",
+      });
     });
-  });
 
-  link.addEventListener("mouseleave", () => {
-    gsap.to(link, {
-      x: 0,
-      y: 0,
-      duration: 0.3,
-      ease: "power2.out",
-    });
-  });
-});
-
-// 5. Split-Type Text Animations
-const splitTexts = document.querySelectorAll(".split-text");
-splitTexts.forEach((text) => {
-  const nextSplit = new SplitType(text, { types: "chars,lines" });
-
-  gsap.set(nextSplit.chars, { y: 100, opacity: 0 });
-
-  ScrollTrigger.batch(nextSplit.chars, {
-    onEnter: (batch) =>
-      gsap.to(batch, {
-        opacity: 1,
+    link.addEventListener("mouseleave", () => {
+      gsap.to(link, {
+        x: 0,
         y: 0,
-        stagger: 0.02,
-        duration: 1,
-        ease: "power4.out",
-        overwrite: true,
-      }),
-    start: "top 90%",
+        duration: 0.3,
+        ease: "power2.out",
+      });
+    });
+  });
+}
+
+// 5. Split-Type Text Animations - Defer for better performance
+requestIdleCallback(() => {
+  const splitTexts = document.querySelectorAll(".split-text");
+  splitTexts.forEach((text) => {
+    const nextSplit = new SplitType(text, { types: "chars,lines" });
+
+    gsap.set(nextSplit.chars, { y: 100, opacity: 0 });
+
+    ScrollTrigger.batch(nextSplit.chars, {
+      onEnter: (batch) =>
+        gsap.to(batch, {
+          opacity: 1,
+          y: 0,
+          stagger: 0.02,
+          duration: 1,
+          ease: "power4.out",
+          overwrite: true,
+        }),
+      start: "top 90%",
+    });
   });
 });
 
@@ -165,21 +156,23 @@ splitTexts.forEach((text) => {
 //   });
 // }
 
-// 7. Portfolio Items Animation
-const portfolioItems = document.querySelectorAll(".portfolio-item");
-if (portfolioItems.length > 0) {
-  gsap.from(portfolioItems, {
-    scrollTrigger: {
-      trigger: ".portfolio-grid",
-      start: "top 70%",
-    },
-    y: 60,
-    opacity: 0,
-    duration: 1,
-    stagger: 0.15,
-    ease: "power3.out",
-  });
-}
+// 7. Portfolio Items Animation - Defer for better INP
+requestIdleCallback(() => {
+  const portfolioItems = document.querySelectorAll(".portfolio-item");
+  if (portfolioItems.length > 0) {
+    gsap.from(portfolioItems, {
+      scrollTrigger: {
+        trigger: ".masonry-grid",
+        start: "top 70%",
+      },
+      y: 60,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.15,
+      ease: "power3.out",
+    });
+  }
+});
 
 // 8. About Section Animation
 const aboutGrid = document.querySelector(".about-grid");
@@ -319,18 +312,20 @@ if (nav) {
 }
 */
 
-// 14. Image Reveal Animation
-const images = document.querySelectorAll(".about-image img, .portfolio-item img");
-images.forEach((img) => {
-  gsap.from(img, {
-    scrollTrigger: {
-      trigger: img,
-      start: "top 80%",
-    },
-    scale: 1.1,
-    opacity: 0,
-    duration: 1.2,
-    ease: "power3.out",
+// 14. Image Reveal Animation - Defer for performance
+requestIdleCallback(() => {
+  const images = document.querySelectorAll(".about-image img, .portfolio-item img");
+  images.forEach((img) => {
+    gsap.from(img, {
+      scrollTrigger: {
+        trigger: img,
+        start: "top 80%",
+      },
+      scale: 1.1,
+      opacity: 0,
+      duration: 1.2,
+      ease: "power3.out",
+    });
   });
 });
 
